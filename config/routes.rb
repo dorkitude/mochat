@@ -1,10 +1,18 @@
 Mochat::Application.routes.draw do
 
-  get "user/login"
-  get "user/login_submit"
-  get "user/logout"
+  get "/" => "user#index"
+
   get "user/register"
   post "user/register_submit"
+  get "user/login"
+  post "user/login_submit"
+  get "user/logout"
+
+
+  resources :room
+  resources :message
+  resources :whisper
+
 
 #  get "whisper/index"
 #
@@ -24,16 +32,6 @@ Mochat::Application.routes.draw do
 #
 #  get "room/create"
 #
-  get "login/login_form"
-
-  get "login/login_submit"
-
-  resources :rooms
-  resources :messages
-  resources :whispers
-
-
-  get "/" => "user#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

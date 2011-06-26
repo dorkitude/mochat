@@ -1,2 +1,46 @@
-<h1>User#register</h1>
-<p>Find me in app/views/user/register.html.erb</p>
+<h1>mochat.net</h1>
+
+<p>Enter your info below to sign up for mochat.net -- don't forget your password!</p>
+
+<form method="post" action="<%= url_for(:action => :register_submit) %>">
+
+  <div class="register_form">
+
+      <div class="form_group">
+          <span class="form_label">handle:</span>
+          <input type="text" size="8" name="handle" value="<%= @f[:handle] %>" />
+      </div>
+
+      <div class="form_group">
+          <span class="form_label">desired password:</span>
+          <input type="text" size="8" name="password" />
+      </div>
+
+      <div class="form_group">
+          <span class="form_label">email:</span>
+          <input type="text" size="8" name="email" value="<%= @f[:email] %>" />
+      </div>
+
+      <div class="form_group">
+          <span class="form_label">phone #:</span>
+          <input type="text" size="8" name="phone" value="<%= @f[:phone] %>" />
+      </div>
+
+
+      <div class="form_group">
+          <input class="submit" type="submit" />
+      </div>
+
+  </div>
+
+</form>
+
+
+<div class="register_link">
+    <div class='link_prelude'>
+        Already have an account?
+    </div>
+    <div class='link_itself'>
+        <%= raw nav_link({:action => :login}, 1, 'login') %>
+    </div>
+</div>
