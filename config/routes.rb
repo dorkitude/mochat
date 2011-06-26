@@ -1,4 +1,8 @@
 Mochat::Application.routes.draw do
+  get "login/login_form"
+
+  get "login/login_submit"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
