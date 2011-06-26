@@ -57,6 +57,10 @@ body {
     color : #ffffff; 
 }
 
+strong {
+    font-weight: bold;
+}
+
 input, textarea {background-color: #ffffff; color:#000000; }
 
 h1 { 
@@ -111,16 +115,20 @@ a.nav_link .text {
 
 
 /* ------------- reg page --------------------- */
-.register_form .form_label {
+.basic_form .form_label {
     display: block;
     margin-top: 1em;
     margin-bottom: 0.1em;
 }
 
-.register_form .submit {
+.basic_form .submit {
     margin-top: 1em;
 }
 
+/* ------------- create room page -------------- */
+.create_room_link {
+    margin-top: 1em;
+}
 
 
 

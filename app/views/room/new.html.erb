@@ -1,2 +1,35 @@
-<h1>Room#new</h1>
-<p>Find me in app/views/room/new.html.erb</p>
+<h1>Create a room</h1>
+<p>Use this form to create your own chatroom and enter it.  You will be your room's only moderator.</p>
+
+
+<form method="post" action="<%= url_for(:action => :create) %>">
+
+  <div class="basic_form create_room_form">
+
+      <div class="form_group">
+          <span class="form_label">Choose a <strong>name</strong> for your room:</span>
+          <input type="text" size="8" name="title" value="<%= @f[:title] %>" />
+      </div>
+
+      <div class="form_group">
+          <span class="form_label">Choose a <strong>topic</strong>, which will be shown to other users when they join the room:</span>
+          <input type="text" size="8" name="topic" value="<%= @f[:topic] %>" />
+      </div>
+
+      <div class="form_group">
+          <input class="submit" type="submit" />
+      </div>
+
+  </div>
+
+</form>
+
+
+<div class="create_room_link">
+    <div class='link_prelude'>
+        Don't want to make a room?
+    </div>
+    <div class='link_itself'>
+      <%= raw nav_link({:action => :index}, 1, 'List Rooms') %>
+    </div>
+</div>

@@ -6,7 +6,7 @@ module ApplicationHelper
     text = text.to_s
     accesskey = accesskey.to_s
 
-    link = "<a class='nav_link' accesskey='#{accesskey}' href='#{url}'><span class='accesskey'>#{accesskey}</span><span class='text'>#{text.capitalize}</span></a>".html_safe
+    link = "<a class='nav_link' accesskey='#{accesskey}' href='#{url}'><span class='accesskey'>#{accesskey}</span><span class='text'>#{text}</span></a>".html_safe
 
   end
   

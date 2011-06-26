@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110626055010) do
+ActiveRecord::Schema.define(:version => 20110626061956) do
 
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110626055010) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "topic"
+    t.datetime "last_message_at"
   end
 
   create_table "user_rooms", :force => true do |t|
