@@ -1,0 +1,2 @@
+module WhisperHelper
+end

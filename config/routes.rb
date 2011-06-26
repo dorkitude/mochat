@@ -1,4 +1,22 @@
 Mochat::Application.routes.draw do
+  get "whisper/index"
+
+  get "whisper/new"
+
+  get "whisper/create"
+
+  get "whisper/show"
+
+  get "message/new"
+
+  get "room/index"
+
+  get "room/show"
+
+  get "room/new"
+
+  get "room/create"
+
   get "login/login_form"
 
   get "login/login_submit"
