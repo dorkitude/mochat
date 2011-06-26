@@ -1,2 +1,35 @@
-<h1>User#login</h1>
-<p>Find me in app/views/user/login.html.erb</p>
+<h1>mochat.net</h1>
+<p>Enter your login credentials below:</p>
+
+
+<form method="post" action="<%= url_for(:action => :login_submit) %>">
+
+  <div class="loginform">
+
+      <div class="form_group">
+          <span class="form_label">username:</span>
+          <input type="text" name="username" />
+      </div>
+
+      <div class="form_group">
+          <span class="form_label">password:</span>
+          <input type="text" name="password" />
+      </div>
+
+      <div class="form_group">
+          <input type="submit" />
+      </div>
+
+  </div>
+
+</form>
+
+
+<div class="register_link">
+    <div class='link_prelude'>
+        Don't have an account?
+    </div>
+    <div class='link_itself'>
+        <%= raw nav_link({:action => :register}, 1, 'register') %>
+    </div>
+</div>

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def instantiate_user
     if session[:user_id]
-      @user = session[:user_id]
+      @user = User.find(session[:user_id])
     else
       @user = nil
     end
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     end
 
     flash[:error] = "gotta login first mang."
-    return redirect_to :controller => :login, :action => :login_form
+    return redirect_to :controller => :user, :action => :login
   end
 
 end
