@@ -3,6 +3,15 @@
 <p>there are currently <%= @rooms.length %> rooms</p>
 
 
+<div class="room_list">
+<% for room in @rooms %>
+  <div class="room_list_item">
+    <a href="<%= url_for(:action => :show, :id => room.id) %>"><%= room.title %> (<%= room.num_chatters %>)</a>
+  </div>
+<% end %>
+</div>
+
+
 <%= nav_link({:action => :new}, 1, "Create a room") %>
 
 <%= will_paginate @rooms %>

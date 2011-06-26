@@ -133,6 +133,12 @@ a.nav_link .text {
     margin-top: 1em;
 }
 
+
+/* ------------- room list page -------------- */
+.room_list {
+    margin-bottom: 1em;
+}
+
 /* ------------- create room page -------------- */
 .create_room_link {
     margin-top: 1em;
