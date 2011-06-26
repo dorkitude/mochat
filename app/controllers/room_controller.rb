@@ -8,6 +8,16 @@ class RoomController < ApplicationController
   def show
     @room = Room.find(params[:id])
 
+    if not @room
+      flash[:error] = "That room has been destroyed."
+      return redirect_to :action => :index
+    end
+
+
+    if @user.user_room.room_id != @room.id
+      @user.join_room @room
+    end
+
     conditions = {:room_id => @room.id}
 
 #    @messages = Message.paginate_by_sql  @room.id, :per_page => 15, :page => params[:page], :order => 'created_at DESC' 

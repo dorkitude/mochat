@@ -2,11 +2,16 @@ class UserController < ApplicationController
 
   def index
     if @user
-      return redirect_to :controller => :room, :action => :index
+      if @user.room
+        return redirect_to :controller => :room, :action => :show, :id => @user.room.id
+      else
+        return redirect_to :controller => :room, :action => :index
+      end
     else
       render :action => :login
     end
   end
+
 
   def login
   end
@@ -32,7 +37,7 @@ class UserController < ApplicationController
     session[:user_id] = user.id
 
 
-    return redirect_to :controller => :room, :action => :index
+    return redirect_to :action => :index
 
   end
 
