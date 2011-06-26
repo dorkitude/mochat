@@ -14,11 +14,13 @@
 <% end %>
 </div>
 
+<%= will_paginate @messages %>
 
 <div class="room_info">
   <span class="title"><%= @room.title %>:</span>
   <span class="num_chatters"><%= @room.num_chatters %> Chatters</span>
 </div>
+
 
 <!-- <div class="room_topic">The topic is set to: <%= @room.topic %></div>
 

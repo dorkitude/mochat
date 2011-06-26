@@ -10,7 +10,16 @@ class RoomController < ApplicationController
 
     conditions = {:room_id => @room.id}
 
-    @messages = Message.paginate_by_room_id @room.id, :page => params[:page], :order => 'created_at DESC' 
+#    @messages = Message.paginate_by_sql  @room.id, :per_page => 15, :page => params[:page], :order => 'created_at DESC' 
+
+
+    @messages = Message.paginate_by_sql([  
+      "SELECT  messages.*  
+        FROM messages  
+        WHERE messages.room_id = ?  
+        ORDER BY created_at DESC  
+      ", @room.id ], :page => params[:page], :per_page => 15 )
+    
   end
 
   def new
