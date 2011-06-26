@@ -4,4 +4,17 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+
+#--- begin paste from http://benwoodall.com/2011/06/rails-global-access-to-rake-dsl-methods-is-deprecated/ #
+module ::YourApplicationName
+  class Application
+    include Rake::DSL
+  end
+end
+ 
+module ::RakeFileUtils
+  extend Rake::FileUtilsExt
+end
+#--- end paste from http://benwoodall.com/2011/06/rails-global-access-to-rake-dsl-methods-is-deprecated/ #
+
 Mochat::Application.load_tasks
