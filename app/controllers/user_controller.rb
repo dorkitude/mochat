@@ -2,7 +2,7 @@ class UserController < ApplicationController
 
   def index
     if @user
-      render :controller => :room, :action => :index
+      return redirect_to :controller => :room, :action => :index
     else
       render :action => :login
     end
