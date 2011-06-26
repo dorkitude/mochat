@@ -11,19 +11,4 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(salt + username + password)
   end
 
-  def self.authenticate_login_attempt(username, password)
-    user = User.find_by_username(username)
-
-    if not user
-      return false
-    end
-
-    hashed_pass = self.hash_password(username, password)
-
-    if user.password == hashed_pass
-      return user
-    end
-
-  end
-
 end
