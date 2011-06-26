@@ -1,2 +1,8 @@
-<h1>Room#index</h1>
-<p>Find me in app/views/room/index.html.erb</p>
+<h1>mochat.net rooms</h1>
+
+<p>there are currently <%= @rooms.length %> rooms</p>
+
+
+<%= nav_link({:action => :new}, 1, "Create a room") %>
+
+<%= will_paginate @rooms %>
