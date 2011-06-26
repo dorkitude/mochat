@@ -1,0 +1,139 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* --------------------- END CSS RESET ----------------- */
+
+
+body { 
+    background-color : #000000; 
+    font-size: small; 
+    color : #ffffff; 
+}
+
+input, textarea {background-color: #ffffff; color:#000000; }
+
+h1 { 
+    font-weight: bold; 
+    color: #80FF00;
+}
+
+p {
+   margin: 1.2em 0;
+}
+
+a:link, a:visited {
+    color:#20B2AA;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#F8F8F8; 
+    background-color:#2020cc;
+}
+
+/* ------------- nav ---------------- */
+
+a.nav_link {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a.nav_link .accesskey {
+    color:#20B2AA;
+}
+
+a.nav_link .text {
+    color: #80FF00;
+}
+
+
+/* ----------- flashes ------------ */
+#flashes .error {
+    padding: 0.3em 0;
+    margin: 0 0 1em 0;
+    background-color: #cc2020;
+    color: #F8F8F8;
+}
+
+
+
+/* -------------- login page --------------- */
+.register_link {
+    margin-top: 1em;
+}
+
+
+/* ------------- reg page --------------------- */
+.register_form .form_label {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.1em;
+}
+
+.register_form .submit {
+    margin-top: 1em;
+}
+
+
+
+
+
+/*
+hr, h1, h2, h3, div, span, img { margin:0; padding:0; border:0;}
+hr.white { color:#FFFFFF; background-color:#FFFFFF; height: 2px; width:1%; }
+hr.black { color:#000000; background-color:#000000; height: 2px; width:1%; }
+hr.grey { color:#250517; background-color:#250517; height: 1px; }
+a.mpl {color:#20B2AA; text-decoration:none;}
+a:link {color:#20B2AA}
+a:visited {color:#20B2AA}
+a:hover {color:#F8F8F8; background-color:#2020cc;}
+a:active {color:#20B2AA }
+a.foot {text-decoration:none;}
+*/
