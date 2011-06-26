@@ -84,6 +84,14 @@ a:hover {
 
 /* ------------- nav ---------------- */
 
+div.nav {
+    margin-bottom: 0.4em;
+}
+
+div.nav a {
+    margin-right:0.6em;
+}
+
 a.nav_link {
     text-decoration: underline;
     font-weight: bold;
@@ -128,6 +136,33 @@ a.nav_link .text {
 /* ------------- create room page -------------- */
 .create_room_link {
     margin-top: 1em;
+}
+
+
+/* -------------------- room page ------------------- */
+.message .guest {
+    color: #FF9900;
+}
+
+.message .moderator {
+    color: #80FF00;
+}
+
+.message {
+    margin-bottom: 0.1em;
+}
+
+.room_info {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+.room_info .title {
+    color: #20B2AA;
+}
+
+.room_info .num_chatters {
+    color: #80FF00;
 }
 
 

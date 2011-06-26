@@ -5,6 +5,11 @@ class RoomController < ApplicationController
   end
 
   def show
+    @room = Room.find(params[:id])
+
+    conditions = {:room_id => @room.id}
+
+    @messages = Message.where("room_id = #{@room.id}", :order => "created_at DESC").paginate :page => params[:page]
   end
 
   def new
@@ -30,6 +35,18 @@ class RoomController < ApplicationController
     room.user = @user
     room.last_message_at = Time.now
     room.save
+
+    message = Message.new
+    message.room = room
+    message.user = @user
+    message.contents = "Welcome to my new room, '#{room.title}'.  I'm the moderator here."
+    message.save
+
+    message = Message.new
+    message.room = room
+    message.user = @user
+    message.contents = "The topic is:  '#{room.topic}'."
+    message.save
 
     return redirect_to :action => :show, :id => room.id  
 

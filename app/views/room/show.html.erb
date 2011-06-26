@@ -1,2 +1,27 @@
-<h1>Room#show</h1>
-<p>Find me in app/views/room/show.html.erb</p>
+<div class="nav">
+<%= nav_link({:controller => :message, :action => :new, :room_id => @room.id}, '7', "Txt") %>
+<%= nav_link({:action => :show, :room_id => @room.id, :fresh => (0...8).map{65.+(rand(25)).chr}.join }, '8', "Refresh") %>
+<%= nav_link({:action => :index}, '9', "Rooms") %>
+</div>
+
+
+<div class="messages">
+<% for message in @messages %>
+  <div class="message">
+  <span class="messager <% if message.user.id == @room.user.id %>moderator<% else %>guest<% end %>"><%= message.user.handle %>&gt;</span>
+    <span class="contents"><%= message.contents %></span>
+  </div>
+<% end %>
+</div>
+
+
+<div class="room_info">
+  <span class="title"><%= @room.title %>:</span>
+  <span class="num_chatters"><%= @room.num_chatters %> Chatters</span>
+</div>
+
+<!-- <div class="room_topic">The topic is set to: <%= @room.topic %></div>
+
+<div class="room_owner">The room is owned by: <span><%= @room.user.handle %></span></div>
+-->
+
