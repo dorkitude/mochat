@@ -1,2 +1,18 @@
-<h1>Message#new</h1>
-<p>Find me in app/views/message/new.html.erb</p>
+<form method="post" action="<%= url_for :action => :create %>">
+
+  <p>Enter your new message below:</p>
+
+  <div class="basic_form new_message_form">
+
+      <input type="hidden" name="room_id" value="<%= @room.id %>" />
+
+      <div class="form_group">
+          <span class="form_label"></span>
+          <input type="text" name="content" />
+      </div>
+
+      <div class="form_group">
+          <input class="submit" type="submit" />
+      </div>
+
+</form>

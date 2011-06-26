@@ -1,4 +1,5 @@
 class RoomController < ApplicationController
+  before_filter :login_required
 
   def index
     @rooms = Room.find(:all, :order => "updated_at DESC").paginate :page => params[:page]
@@ -9,7 +10,7 @@ class RoomController < ApplicationController
 
     conditions = {:room_id => @room.id}
 
-    @messages = Message.where("room_id = #{@room.id}", :order => "created_at DESC").paginate :page => params[:page]
+    @messages = Message.paginate_by_room_id @room.id, :page => params[:page], :order => 'created_at DESC' 
   end
 
   def new
